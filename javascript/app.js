@@ -1,5 +1,6 @@
-import { getAirtableData } from './airtable.js';
+import { getDataFrom } from './airtable.js';
 
-getAirtableData('Quotes');
-
-console.log("Hello from the console");
+// console.log(getDataFrom);
+getDataFrom('Quotes').then(function(data) {
+    console.log(data);
+  })

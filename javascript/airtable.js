@@ -1,6 +1,6 @@
 import { airtableApiKey } from './keys.js';
 
-function getAirtableData(tableName) {
+function getDataFrom(tableName) {
   const options = {
     mode: "cors", // no-cors, cors, *same-origin
     credentials: "same-origin", // include, *same-origin, omit
@@ -10,15 +10,19 @@ function getAirtableData(tableName) {
     }
   } 
 
-  fetch(`https://api.airtable.com/v0/appB3NhaDjZBZ6g37/${tableName}`, options)
+  return fetch(`https://api.airtable.com/v0/appB3NhaDjZBZ6g37/${tableName}?maxRecords=200`, options)
     .then(function(response) {
       return response.json();
     })
-    .then(function(data) {
-      console.log(data);
+    .then(function({ records }) {
+      // const data = new Promise(function(resolve) {
+      //   resolve(records);
+      // });
+      // return data;
+      return records;
     })
 }
 
-export { getAirtableData };
+export { getDataFrom };
 
 // https://api.airtable.com/v0/appB3NhaDjZBZ6g37/Quotes
