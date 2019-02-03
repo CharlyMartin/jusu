@@ -8,6 +8,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="content">
+    <div class="block" id="quote">
+      <app-block title="Quote" text="Lorem ipsum"></app-block>
+    </div>
+
+    <div class="block" id="life-counter">
+      <app-block title="Life Counter" text="Lorem ipsum"></app-block>
+    </div>
+
+    <div class="block" id="principle">
+      <app-block title="Principle" text="Lorem ipsum"></app-block>
+    </div>
+  </div>
+
+  <template>
+    <style>
+      .block-content {
+        width: 30vw;
+      }
+    </style>
+
+    <div class="block-content">
+      <h2>Title</h2>
+      <p>Lorem Ipsum</p>
+    </div>
+  </template>
   
   <script type="module" src="javascript/app.js"></script>
 </body>
