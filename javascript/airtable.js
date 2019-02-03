@@ -1,4 +1,4 @@
-import { airtableApiKey } from './keys.js';
+import { airtableKey, tables } from './keys.js';
 
 function getDataFrom(tableName) {
   const options = {
@@ -6,11 +6,11 @@ function getDataFrom(tableName) {
     credentials: "same-origin", // include, *same-origin, omit
     headers: {
       "Content-Type": "application/json",
-      "Authorization" : `Bearer ${airtableApiKey}`
+      "Authorization" : `Bearer ${airtableKey}`
     }
   } 
 
-  return fetch(`https://api.airtable.com/v0/appB3NhaDjZBZ6g37/${tableName}?maxRecords=200`, options)
+  return fetch(`https://api.airtable.com/v0/${tables[tableName]}/${tableName}`, options)
     .then(function(response) {
       return response.json();
     })
