@@ -1,6 +1,6 @@
-import { airtableKey, tables } from './keys.js';
+import { airtableKey, tables } from './secret.js';
 
-function getDataFrom(tableName) {
+function getDataFrom(tableName, id = 1) {
   const headers = {
     mode: "cors",
     credentials: "same-origin",
