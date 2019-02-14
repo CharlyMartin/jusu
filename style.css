@@ -27,7 +27,7 @@ body {
   background: #37509B;
 }
 
-#life-counter {
+#counter {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   background: #6186F4;

@@ -14,6 +14,7 @@ class AppBlock extends HTMLElement {
     // Web Component's attributes:
     this.title = this.getAttribute('title');
     this.text = this.getAttribute('text');
+    this.size = this.getAttribute('size');
 
     // HTML elements from the template:
     this.header = this.root.querySelector('.title');
