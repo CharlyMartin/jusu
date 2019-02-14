@@ -1,37 +1,60 @@
 class AppBlock extends HTMLElement {
   constructor() {
-    super();
     // Calling the constructor() of HTMLElement
+    super();
 
-    const template = document.querySelector('template');
-    const shadowRoot = this.attachShadow({mode: 'open'})
     // Using instances as roots of Shadow DOM
+    this.root = this.attachShadow({mode: 'open'})
     
-    shadowRoot.appendChild(template.content.cloneNode(true));
-    // Using an HTML fragent and cloning for each instance
+    // Using an HTML fragent and cloning for each instance:
+    const template = document.querySelector('template');    
+    this.root.appendChild(template.content.cloneNode(true));
+    
 
+    // Web Component's attributes:
     this.title = this.getAttribute('title');
     this.text = this.getAttribute('text');
 
-    shadowRoot.querySelector('h2').innerText = this.title;
-    shadowRoot.querySelector('p').innerText = this.text;
-    // Using attributes to update the content of the component;
+    // HTML elements from the template:
+    this.header = this.root.querySelector('.title');
+    this.paragraph = this.root.querySelector('.text');
   }
 
-  static get observedAttributes() { return ['title', 'text']; };
-  // This is listening to changes in the instances' attributes
+  static get observedAttributes() {
+    return ['title', 'text'];
+    // By default custom elements do not listen to changes.
+    // This is listening to changes in the instances' attributes.
+  }
+
+  init() {
+    this.header.innerText = this.title;
+    this.paragraph.innerText = this.text;
+    // Using attribute values to fill the content of the component's children;
+  }
+
+  updateElement(el, newVal) {
+    el.innerText = newVal;
+  }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // console.log(name, oldValue, newValue);
+    // console.log(`${name} attribute changed`);
+
+    if (name === 'title') {
+      this.updateElement(this.header, newValue);
+    };
+
+    if (name === 'text') {
+      this.updateElement(this.paragraph, newValue);
+    };
   }
 
   connectedCallback() {
-    console.log('App Block added to the DOM.', this.title);
-    
+    console.log(`${this.title} added to the DOM.`);
+    this.init();
   }
 
   disconnectedCallback() {
-    console.log('App Block removed from the DOM.');
+    console.log(`${this.title} removed from the DOM.`);
   }
 }
 

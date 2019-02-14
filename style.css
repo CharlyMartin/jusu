@@ -3,10 +3,11 @@
 body {
   margin: 5px;
   font-family: 'Muli';
+  color: white;
 }
 
-.content {
-  height: calc(100vh - 10px);
+.grid {
+  height: calc(100vh - 0.6rem);
   width: 100%;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -14,29 +15,33 @@ body {
 }
 
 .block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  color: white;
-  border-radius: 2px;
+  margin: 0.3rem;
+  border-radius: 0.1rem;
   box-shadow: 2px 2px 10px rgba(60, 60, 60, 0.1);
+  overflow: scroll;
 }
 
 #quote {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-  background: burlywood;
+  background: #37509B;
 }
 
 #life-counter {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  background: teal;
+  background: #6186F4;
 }
 
 #principle {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
-  background: rosybrown;
+  background: #4764BC;
+}
+
+@media screen and (max-width: 800px) {
+  /* Up to that screen width, the following rules apply: */
+  .grid {
+    display: block;
+  }
 }

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="content">
+  <div class="grid">
     <div class="block" id="quote">
       <app-block title="Quote" text="Lorem ipsum"></app-block>
     </div>
@@ -25,27 +25,28 @@
   <template>
     <style>
       .block-content {
-        width: 30vw;
+        padding: 3rem;
       }
 
-      h2 {
-        font-weight: 900;
-        font-size: 15px;
+      h2.title {
+        font-weight: 700;
+        font-size: 1rem;
         margin: 0;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.2em;
+        letter-spacing: 0.1rem;
+        margin-bottom: 2rem;
       }
 
-      p {
+      p.text {
         font-weight: 200;
-        font-size: 26px;
+        font-size: 1.4rem;
         margin: 0;
+        line-height: 2.4rem;
       }
     </style>
 
     <div class="block-content">
-      <h2>Title</h2>
-      <p>Lorem Ipsum</p>
+      <h2 class="title"></h2>
+      <p class="text"></p>
     </div>
   </template>
   
