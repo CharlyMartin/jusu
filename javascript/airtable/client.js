@@ -9,13 +9,14 @@ function getDataFrom(tableName, id = 1) {
       "Authorization" : `Bearer ${airtableKey}`
     }
   }
-  
+
   const url = `https://api.airtable.com/v0/${tables[tableName]}/${tableName}?filterByFormula=(Id = '${id}')`;
   return fetch(url, headers)
     .then(function(response) {
       return response.json();
     })
     .then(function({ records }) {
+      console.log(records);
       return records;
       // const data = new Promise(function(resolve) {
       //   resolve(records);
