@@ -8,9 +8,10 @@ function getDataFrom(tableName, id = 1) {
       "Content-Type": "application/json",
       "Authorization" : `Bearer ${airtableKey}`
     }
-  } 
-
-  return fetch(`https://api.airtable.com/v0/${tables[tableName]}/${tableName}`, headers)
+  }
+  
+  const url = `https://api.airtable.com/v0/${tables[tableName]}/${tableName}?filterByFormula=(Id = '${id}')`;
+  return fetch(url, headers)
     .then(function(response) {
       return response.json();
     })
