@@ -7,14 +7,14 @@ class AppBlock extends HTMLElement {
     this.root = this.attachShadow({mode: 'open'})
     
     // Using an HTML fragent and cloning for each instance:
-    const template = document.querySelector('template');    
+    const template = document.querySelector('template');
     this.root.appendChild(template.content.cloneNode(true));
     
 
     // Web Component's attributes:
     this.title = this.getAttribute('title');
     this.text = this.getAttribute('text');
-    this.size = this.getAttribute('size');
+    this.class = this.getAttribute('class');
 
     // HTML elements from the template:
     this.header = this.root.querySelector('.title');
@@ -22,7 +22,7 @@ class AppBlock extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['title', 'text'];
+    return ['title', 'text', 'class'];
     // By default custom elements do not listen to changes.
     // This is listening to changes in the instances' attributes.
   }
@@ -30,6 +30,7 @@ class AppBlock extends HTMLElement {
   init() {
     this.header.innerText = this.title;
     this.paragraph.innerText = this.text;
+    this.paragraph.classList.add(this.class);
     // Using attribute values to fill the content of the component's children;
   }
 
@@ -37,8 +38,12 @@ class AppBlock extends HTMLElement {
     el.innerText = newVal;
   }
 
+  updateClass(el, newVal) {
+    console.log(el);
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log(`${name} attribute changed`);
+    // console.log(`${name} attribute changed`);
 
     if (name === 'title') {
       this.updateElement(this.header, newValue);
@@ -47,6 +52,11 @@ class AppBlock extends HTMLElement {
     if (name === 'text') {
       this.updateElement(this.paragraph, newValue);
     };
+
+    // if (name === 'class') {
+    //   // this.classList.add(newValue);
+    //   this.updateElement(this.paragraph, newValue);
+    // }
   }
 
   connectedCallback() {

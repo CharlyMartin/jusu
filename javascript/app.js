@@ -9,8 +9,7 @@ window.customElements.define('app-block', AppBlock);
 window.setInterval(runCounter, 100);
 
 // To-Do
-// Change style based on size attributes
-// https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks
+// Change style based on size attributes: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks
 
 // Ask birthday in a prompt window and store locally
 
