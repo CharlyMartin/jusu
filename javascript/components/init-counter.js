@@ -1,7 +1,8 @@
 const bDay = 12;
 const bMonth = 6 // JS starts counting month at 0;
 const component = document.querySelector('#counter > app-block');
-component.setAttribute('title', 'Time left until next birthday');
+component.setAttribute('title', 'Time since last birthday');
+
 
 function isBirthdayToday() {
   const today = `${new Date().getDate()}/${new Date().getMonth()}`
@@ -43,6 +44,7 @@ function runCounter() {
   const nextBirthday = new Date().getFullYear() + 1;
   component.setAttribute('text', getTimeSinceLastBirthday(lastBirthday, nextBirthday));
 }
+
 
 export { runCounter };
 

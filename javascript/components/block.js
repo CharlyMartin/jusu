@@ -52,15 +52,10 @@ class AppBlock extends HTMLElement {
     if (name === 'text') {
       this.updateElement(this.paragraph, newValue);
     };
-
-    // if (name === 'class') {
-    //   // this.classList.add(newValue);
-    //   this.updateElement(this.paragraph, newValue);
-    // }
   }
 
   connectedCallback() {
-    console.log(`${this.title} added to the DOM.`);
+    // console.log(`${this.title} added to the DOM.`);
     this.init();
   }
 
