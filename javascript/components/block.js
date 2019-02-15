@@ -38,7 +38,7 @@ class AppBlock extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    // console.log(`${name} attribute changed`);
+    console.log(`${name} attribute changed`);
 
     if (name === 'title') {
       this.updateElement(this.header, newValue);
@@ -55,7 +55,7 @@ class AppBlock extends HTMLElement {
   }
 
   disconnectedCallback() {
-    console.log(`${this.title} removed from the DOM.`);
+    // console.log(`${this.title} removed from the DOM.`);
   }
 }
 

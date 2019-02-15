@@ -14,6 +14,13 @@ window.setInterval(runCounter, 100);
 
 // Ask birthday in a prompt window and store locally
 
+// Make the last id programmatically set, not hard coded
+// 1. Find what the last inserted record is thanks to the created field
+// 2. Get the id from that
+// 3. Generate a random ID from 1 and that id.
+// 4. Inject the random id in the fetch request
+// 5. Exclude empty field NOT({Author} = ''). Only common field to both tables.
+
 // Create 1 quote & principle / day, no more. Even if page refreshes.
 
 // Have a read-only API key from airtable
