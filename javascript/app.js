@@ -9,8 +9,6 @@ window.customElements.define('app-block', AppBlock);
 window.setInterval(runCounter, 100);
 
 // To-Do
-// Change style based on size attributes: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks
-
 // Ask birthday in a prompt window and store locally
 
 // Make the last id programmatically set, not hard coded
@@ -24,8 +22,12 @@ window.setInterval(runCounter, 100);
 
 // Have a read-only API key from airtable
 
+
 // DONE ///////////////////
 // Redraw layout. 7 * 7 
   // principle is 4 wide / 7 high
   // quote is 3 wide / 4 high
   // counter is 3 wide / 3 high
+
+// Change style based on size attributes
+  // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks
