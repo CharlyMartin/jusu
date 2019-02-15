@@ -24,3 +24,8 @@ window.setInterval(runCounter, 100);
 // Create 1 quote & principle / day, no more. Even if page refreshes.
 
 // Have a read-only API key from airtable
+
+// Redraw layout. 7 * 7
+// principle is 4 wide / 7 high
+// quote is 3 wide / 4 high
+// counter is 3 wide / 3 high
