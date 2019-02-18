@@ -3,6 +3,7 @@ import { setText, setTitle } from './components/init-counter.js';
 
 import './components/init-quote.js';
 import './components/init-principle.js';
+// import './airtable/test.js';
 
 window.customElements.define('app-block', AppBlock);
 

@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
-    "lint": "eslint javascript/app.js"
+    "lint": "eslint javascript/*"
   },
   "dependencies": {
     "airtable": "^0.5.9"
