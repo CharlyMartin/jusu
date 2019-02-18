@@ -1,0 +1,17 @@
+{
+  "name": "the-good-life",
+  "version": "1.0.0",
+  "description": "An simple app to live a better life",
+  "main": "index.js",
+  "repository": "git@github.com:CharlyMartin/the-good-life.git",
+  "author": "Charly <charly.martin.1207@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  }
+}
