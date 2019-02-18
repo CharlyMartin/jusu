@@ -1,21 +1,24 @@
 import { AppBlock } from './components/block.js';
-import { runCounter } from './components/init-counter.js';
+import { setText, setTitle } from './components/init-counter.js';
 
 import './components/init-quote.js';
 import './components/init-principle.js';
 
 window.customElements.define('app-block', AppBlock);
 
-window.setInterval(runCounter, 100);
+window.setInterval(setText, 100);
+setTitle();
+
 // To-Do
 // Ask birthday in a prompt window and store locally
 
 // Make the last id programmatically set, not hard coded
-// 1. Find what the last inserted record is thanks to the created field
-// 2. Get the id from that
-// 3. Generate a random ID from 1 and that id.
-// 4. Inject the random id in the fetch request
-// 5. Exclude empty field NOT({Author} = ''). Only common field to both tables.
+  // 1. Find what the last inserted record is thanks to the created field
+  // 2. Get the id from that
+  // 3. Generate a random ID from 1 and that id.
+  // 4. Inject the random id in the fetch request
+  // 5. Exclude empty field NOT({Author} = ''). Only common field to both tables.
+  // => Import Airtable.js to do so
 
 // Create 1 quote & principle / day, no more. Even if page refreshes.
 

@@ -1,7 +1,8 @@
 const bDay = 12;
 const bMonth = 6 // JS starts counting month at 0;
+const bYear = 1990;
+const firstName = 'Charly';
 const component = document.querySelector('#counter > app-block');
-component.setAttribute('title', 'Time since last birthday');
 
 
 function isBirthdayToday() {
@@ -27,9 +28,22 @@ function getTimeSinceLastBirthday(lastY, nextY) {
   return `${output} %`;
 }
 
-function runCounter() {
+function currentYear() {
+  const currentYear = new Date().getFullYear() - bYear;
+  if (isBirthdayAhead()) {return currentYear};
+  return currentYear + 1;
+}
+
+function setTitle() {
+  if (isBirthdayAhead()) {
+    component.setAttribute('title', `Progress of your ${currentYear()}th year`);
+  }
+  
+}
+
+function setText() {
   if (isBirthdayToday()) {
-    component.setAttribute('text', `Happy Birthday Charly 🎉`);
+    component.setAttribute('text', `Happy Birthday ${firstName} 🎉`);
     return
   }
 
@@ -46,6 +60,6 @@ function runCounter() {
 }
 
 
-export { runCounter };
+export { setText, setTitle };
 
 

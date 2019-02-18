@@ -1,4 +1,4 @@
-import { getDataFrom } from '../airtable/client.js';
+import { getDataFrom, getLastRecordId } from '../airtable/client.js';
 import { randomNumber } from '../helpers/random-number.js';
 
 const component = document.querySelector('#principle > app-block');
