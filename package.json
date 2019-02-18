@@ -16,5 +16,8 @@
     "dev": "parcel index.html",
     "build": "parcel build index.html",
     "lint": "eslint javascript/app.js"
+  },
+  "dependencies": {
+    "airtable": "^0.5.9"
   }
 }
