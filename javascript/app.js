@@ -7,7 +7,6 @@ import './components/init-principle.js';
 window.customElements.define('app-block', AppBlock);
 
 window.setInterval(runCounter, 100);
-
 // To-Do
 // Ask birthday in a prompt window and store locally
 

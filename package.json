@@ -8,10 +8,13 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "parcel-bundler": "^1.11.0"
   },
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "lint": "eslint javascript/app.js"
   }
 }
