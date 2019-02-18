@@ -10,20 +10,21 @@ window.customElements.define('app-block', AppBlock);
 window.setInterval(setText, 100);
 setTitle();
 
+
 // To-Do
-// Ask birthday in a prompt window and store locally
-
-// Make the last id programmatically set, not hard coded
-  // 1. Find what the last inserted record is thanks to the created field
-  // 2. Get the id from that
-  // 3. Generate a random ID from 1 and that id.
-  // 4. Inject the random id in the fetch request
-  // 5. Exclude empty field NOT({Author} = ''). Only common field to both tables.
-  // => Import Airtable.js to do so
-
 // Create 1 quote & principle / day, no more. Even if page refreshes.
 
+// Redesign
+  // Add pattern in the background (Make padding bigger)
+  // Add loader in quote and principle
+
+// Ask birthday in a prompt window and store locally
+
+// Deploy on netlify
+
 // Have a read-only API key from airtable
+
+
 
 
 // DONE ///////////////////
@@ -34,3 +35,11 @@ setTitle();
 
 // Change style based on size attributes
   // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks
+
+// Make the last id programmatically set, not hard coded
+  // 1. Find what the last inserted record is thanks to the created field
+  // 2. Get the id from that
+  // 3. Generate a random ID from 1 and that id.
+  // 4. Inject the random id in the fetch request
+  // 5. Exclude empty field NOT({Author} = ''). Only common field to both tables.
+  // => Import Airtable.js to do so
