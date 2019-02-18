@@ -1,9 +1,8 @@
 import { AppBlock } from './components/block.js';
-import { setText, setTitle } from './components/init-counter.js';
 
-import './components/init-quote.js';
-import './components/init-principle.js';
-// import './airtable/test.js';
+import { setText, setTitle } from './initialisers/init-counter.js';
+import './initialisers/init-quote.js';
+import './initialisers/init-principle.js';
 
 window.customElements.define('app-block', AppBlock);
 
