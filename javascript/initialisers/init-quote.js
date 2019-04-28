@@ -1,14 +1,12 @@
-import { getDataFrom } from '../airtable/client.js';
+import { getDataFrom, fetchFromId, getLastRecordId } from '../airtable/client.js';
 import { randomNumber } from '../helpers/random-number.js';
 
 const component = document.querySelector('#quote > app-block');
-const lastId = 804;
-const randomId = randomNumber(lastId);
 
-getDataFrom('Quotes', randomId).then(function(data) {
-  component.setAttribute('title', data[0].fields.Author);
-  component.setAttribute('text', data[0].fields.Quote);
-  // component.querySelector('.title').innerHTML = data[0].fields.Author;
-  // component.querySelector('.text').innerHTML = data[0].fields.Quote;
-  // console.log(component.querySelector('.title'));
-})
+getLastRecordId('Quotes')
+  .then(id => getDataFrom('Quotes', randomNumber(id)))
+  .then(data => {
+    component.setAttribute('text', data[0].fields.Quote);
+    return data[0].fields.Author[0];
+}).then(id => fetchFromId('Quotes', id))
+  .then(data => component.setAttribute('title', data.Name));

@@ -1,8 +1,9 @@
+// Same for the whole workspace
 const airtableKey = 'keyLJFjUKsl2jfxfA';
 
-const tables = {
-  'Quotes': 'appB3NhaDjZBZ6g37',
-  'Principles': 'app8rNOuT6IXnW8Gv'
+// Same for the whole workspace
+const bases = {
+  'Content': 'appB3NhaDjZBZ6g37',
 }
 
-export { airtableKey, tables };
+export { airtableKey, bases };

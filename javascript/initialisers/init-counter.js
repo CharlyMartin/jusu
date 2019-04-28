@@ -30,7 +30,7 @@ function getTimeSinceLastBirthday(lastY, nextY) {
 
 function currentYear() {
   const currentYear = new Date().getFullYear() - bYear;
-  if (isBirthdayAhead()) {return currentYear};
+  if (isBirthdayAhead()) {return currentYear}
   return currentYear + 1;
 }
 
@@ -59,7 +59,10 @@ function setText() {
   component.setAttribute('text', getTimeSinceLastBirthday(lastBirthday, nextBirthday));
 }
 
+window.setInterval(setText, 100);
+setTitle();
 
-export { setText, setTitle };
+
+// export { setText, setTitle };
 
 

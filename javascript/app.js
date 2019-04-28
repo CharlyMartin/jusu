@@ -1,13 +1,10 @@
 import { AppBlock } from './components/block.js';
 
-import { setText, setTitle } from './initialisers/init-counter.js';
+// import { setText, setTitle } from './initialisers/init-counter.js';
 import './initialisers/init-quote.js';
 import './initialisers/init-principle.js';
 
 window.customElements.define('app-block', AppBlock);
-
-window.setInterval(setText, 100);
-setTitle();
 
 
 // To-Do

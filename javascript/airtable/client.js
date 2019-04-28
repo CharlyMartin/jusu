@@ -1,4 +1,4 @@
-import { airtableKey, tables } from './secret.js';
+import { airtableKey, bases } from './secret.js';
 const baseUrl = 'https://api.airtable.com/v0';
 
 const headers = {
@@ -17,20 +17,20 @@ const lastIdParams = {
   maxRecords: 'maxRecords=1'
 }
 
-function getLastRecordId(tableName) {
-  const url = `${baseUrl}/${tables[tableName]}/${tableName}?${Object.values(lastIdParams).join('&')}`;
+function getLastRecordId(table, baseName = 'Content') {
+  const url = `${baseUrl}/${bases[baseName]}/${table}?${Object.values(lastIdParams).join('&')}`;
   
   return fetch(url, headers)
     .then(function(response) {
       return response.json();
     })
     .then(function({ records }) {
-      return records;
+      return records[0].fields.Id;
     })
 }
 
-function getDataFrom(tableName, id = 1) {
-  const url = `${baseUrl}/${tables[tableName]}/${tableName}?filterByFormula=(Id=${id})`;
+function getDataFrom(table, id = 1, baseName = 'Content') {
+  const url = `${baseUrl}/${bases[baseName]}/${table}?filterByFormula=(Id=${id})`;
 
   return fetch(url, headers)
     .then(function(response) {
@@ -42,4 +42,16 @@ function getDataFrom(tableName, id = 1) {
     })
 }
 
-export { getDataFrom, getLastRecordId };
+function fetchFromId(table, id, baseName = 'Content') {
+  const url = `${baseUrl}/${bases[baseName]}/${table}/${id}`;
+
+  return fetch(url, headers)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function({ fields }) {
+      return fields;
+    })
+}
+
+export { getDataFrom, getLastRecordId, fetchFromId };

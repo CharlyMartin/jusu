@@ -39,7 +39,7 @@ class AppBlock extends HTMLElement {
   }
 
   updateClass(el, newVal) {
-    console.log(el);
+    // console.log(el);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -47,11 +47,11 @@ class AppBlock extends HTMLElement {
 
     if (name === 'title') {
       this.updateElement(this.header, newValue);
-    };
+    }
 
     if (name === 'text') {
       this.updateElement(this.paragraph, newValue);
-    };
+    }
   }
 
   connectedCallback() {
