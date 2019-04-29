@@ -1,6 +1,6 @@
-javascript/airtable/secret.js
 javascript/airtable/test.js
 node_modules
 dist
 .cache
+.env
 

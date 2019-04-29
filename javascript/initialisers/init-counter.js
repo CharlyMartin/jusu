@@ -38,7 +38,6 @@ function setTitle() {
   if (isBirthdayAhead()) {
     component.setAttribute('title', `Progress of your ${currentYear()}th year`);
   }
-  
 }
 
 function setText() {

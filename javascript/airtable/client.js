@@ -1,23 +1,25 @@
-import { airtableKey, bases } from './secret.js';
 const baseUrl = 'https://api.airtable.com/v0';
+const bases = {
+  'Content': 'appB3NhaDjZBZ6g37',
+}
 
 const headers = {
   mode: "cors",
   credentials: "same-origin",
   headers: {
     "Content-Type": "application/json",
-    "Authorization" : `Bearer ${airtableKey}`
+    "Authorization" : `Bearer ${process.env.AIRTABLE_API_KEY}`
   }
 }
 
-const lastIdParams = {
-  fields: 'fields[]=Id',
-  sortField: 'sort[0][field]=Created',
-  sortDirection: 'sort[0][direction]=desc',
-  maxRecords: 'maxRecords=1'
-}
-
 function getLastRecordId(table, baseName = 'Content') {
+  const lastIdParams = {
+    fields: 'fields[]=Id',
+    sortField: 'sort[0][field]=Created',
+    sortDirection: 'sort[0][direction]=desc',
+    maxRecords: 'maxRecords=1'
+  }
+
   const url = `${baseUrl}/${bases[baseName]}/${table}?${Object.values(lastIdParams).join('&')}`;
   
   return fetch(url, headers)
