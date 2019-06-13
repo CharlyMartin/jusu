@@ -1143,24 +1143,17 @@ var component = document.querySelector('#quote > app-block');
 }); // .then(id => fetchFromId('Quotes', id))
 // .then(data => component.setAttribute('title', data.Name));
 },{"../airtable/client.js":"javascript/airtable/client.js","../helpers/random-number.js":"javascript/helpers/random-number.js"}],"javascript/initialisers/init-principle.js":[function(require,module,exports) {
-"use strict";
-
-var _client = require("../airtable/client.js");
-
-var _randomNumber = require("../helpers/random-number.js");
-
-var component = document.querySelector('#principle > app-block');
-(0, _client.getLastRecordId)('Principles').then(function (id) {
-  return (0, _client.getDataFrom)('Principles', (0, _randomNumber.randomNumber)(id));
-}).then(function (data) {
-  component.setAttribute('text', data[0].fields.Principle);
-  return data[0].fields.Author[0];
-}).then(function (id) {
-  return (0, _client.fetchFromId)('Principles', id);
-}).then(function (data) {
-  return component.setAttribute('title', data.Name);
-});
-},{"../airtable/client.js":"javascript/airtable/client.js","../helpers/random-number.js":"javascript/helpers/random-number.js"}],"javascript/initialisers/init-counter.js":[function(require,module,exports) {
+// import { getDataFrom, fetchFromId, getLastRecordId } from '../airtable/client.js';
+// import { randomNumber } from '../helpers/random-number.js';
+// const component = document.querySelector('#principle > app-block');
+// getLastRecordId('Principles')
+//   .then(id => getDataFrom('Principles', randomNumber(id)))
+//   .then(data => {
+//     component.setAttribute('text', data[0].fields.Principle);
+//     return data[0].fields.Author[0];
+// }).then(id => fetchFromId('Principles', id))
+//   .then(data => component.setAttribute('title', data.Name));
+},{}],"javascript/initialisers/init-counter.js":[function(require,module,exports) {
 var bDay = 12;
 var bMonth = 6; // JS starts counting month at 0;
 
@@ -1203,7 +1196,7 @@ function currentYear() {
 
 function setTitle() {
   if (isBirthdayAhead()) {
-    component.setAttribute('title', "Progress of your ".concat(currentYear(), "th year"));
+    component.setAttribute('title', "".concat(currentYear(), "th Year"));
   }
 }
 

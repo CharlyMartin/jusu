@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:200,300,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:200,700');
 
 :root {
   --orange-0: #fff9f1;
@@ -13,7 +13,8 @@
   --orange-90: #442d00;
   --orange-100: #1a1100;
 }
-@keyframes slidedown {
+
+/* @keyframes slidedown {
   from {
     background-position: 100% 35%;
   }
@@ -21,11 +22,10 @@
   to {
     background-position: 100% 100%;
   }
-}
+} */
 
 body {
   font-family: 'Muli';
-  position: relative;
   height: 100vh;
   margin: 0;
   background: var(--orange-0);
@@ -35,8 +35,9 @@ body {
   animation-duration: 200s; */
 }
 
+
 .container {
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
   height: 100%;
 }
@@ -52,17 +53,43 @@ body {
   max-height: 90%;
   overflow-y: scroll;
   width: 100%;
+  padding: 1rem;
 }
 
 .block {
   margin: 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
   background: white;
+}
+
+.block-content {
+  padding: 2.5rem 3rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 0;
+  letter-spacing: 0.08rem;
+  margin-bottom: 1rem;
+  background: var(--orange-10);
+  color: var(--orange-100);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  width: max-content;
+}
+
+.text {
+  font-weight: 200;
+  margin: 0;
+  font-size: 1.9rem;
+  line-height: 3rem;
+  color: var(--orange-100);
 }
 
 @media screen and (max-width: 550px) {
   .container {
-    width: 330px;
+    width: 350px;
   }
 }
 

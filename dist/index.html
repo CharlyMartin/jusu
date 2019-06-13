@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jusu</title>
+    <title>Jusu Club</title>
+    <link rel="icon" href="/favicon.4a53ba07.png" sizes="60x60" type="image/png">
     <link rel="stylesheet" href="/style.e308ff8e.css">
   <script src="/style.e308ff8e.js"></script></head>
   <body>
-    <div class="bottom"></div>
-
     <div class="container flex-center">
-        <div class="blocks">
-
-          <div class="block" id="counter">
-            <app-block title="Counter" text="Lorem ipsum" class="text-big">
-            </app-block>
-          </div>
-
-          <div class="block" id="quote">
-            <app-block title="Quote" text="Lorem ipsum" class="text-big">
-            </app-block>
-          </div>
+      <div class="blocks">
+        <div class="block" id="counter">
+          <app-block title="Counter" text="Lorem ipsum" class="text-big">
+          </app-block>
         </div>
 
+        <div class="block" id="quote">
+          <app-block title="Quote" text="Lorem ipsum" class="text-big">
+          </app-block>
+        </div>
+      </div>
     </div>
 
     <template>
@@ -40,7 +37,7 @@
           background: var(--orange-10);
           color: var(--orange-100);
           padding: 0.4rem 0.8rem;
-          border-radius: 0.2rem;
+          border-radius: 0.4rem;
           width: max-content;
         }
 
@@ -50,6 +47,13 @@
           font-size: 1.9rem;
           line-height: 3rem;
           color: var(--orange-100);
+        }
+
+        @media screen and (max-width: 550px) {
+          .text {
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+          }
         }</style>
 
       <div class="block-content">
