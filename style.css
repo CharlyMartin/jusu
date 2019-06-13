@@ -1,50 +1,97 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:200,300,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,700');
 
-body {
-  margin: 5px;
-  font-family: 'Muli';
-  background: #FFFDFA;
+:root {
+  --orange-0: #fff9f1;
+  --orange-10: #fdeac9;
+  --orange-40: #dd8d00;
+  --orange-50: #cb8200;
+  --orange-80: #6e4800;
+  --orange-100: #1a1100;
+  --white: rgba(255, 255, 255, 0.9)
 }
 
-.grid {
-  height: calc(100vh - 0.6rem);
+@keyframes slidedown {
+  from {
+    background-position: 100% 35%;
+  }
+
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+body {
+  font-family: 'Muli';
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  background: var(--orange-0);
+  /* background-image: url('./assets/images/moutain.jpg');
+  background-size: cover;
+  animation-name: slidedown;
+  animation-duration: 200s; */
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocks {
+  z-index: 10;
+  max-height: 90%;
+  overflow-y: scroll;
   width: 100%;
-  display: grid;
-  grid-template-rows: repeat(9, 1fr);
-  grid-template-columns: repeat(7, 1fr);
 }
 
 .block {
   margin: 0.5rem;
   border-radius: 0.2rem;
-  /* box-shadow: 1px 1px 2px rgba(246, 237, 205, 0.8); */
   overflow-y: scroll;
   background: white;
-  border: 1px solid #FFF6E6;
-  box-shadow: 2px 2px 16px #FFF6E6;
 }
 
-#quote {
+@media screen and (max-width: 550px) {
+  .container {
+    width: 330px;
+  }
+}
+
+
+
+/* .grid {
+  height: calc(100vh - 0.6rem);
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+} */
+
+/* @media screen and (max-width: 800px) {
+  .grid {
+    display: block;
+  }
+} */
+
+/* #quote {
   grid-column: 1 / span 3;
   grid-row: 4 / span 6;
-  /* background: #FAEBCF; */
 }
 
 #counter {
   grid-column: 1 / span 3;
   grid-row: 1 / span 3;
-  /* background: #FAEBCF; */
 }
 
 #principle {
   grid-column: 4 / span 4;
   grid-row: 1 / span 9;
-  /* background: #FAEBCF; */
-}
+} */
 
-@media screen and (max-width: 800px) {
-  /* Up to that screen width, the following rules apply: */
-  .grid {
-    display: block;
-  }
-}

@@ -1,8 +1,7 @@
 require('dotenv').config({path: ".env"});
-debugger;
+
 import { AppBlock } from './components/block.js';
 
-// import { setText, setTitle } from './initialisers/init-counter.js';
 import './initialisers/init-quote.js';
 import './initialisers/init-principle.js';
 import './initialisers/init-counter.js';
