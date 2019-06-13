@@ -7,6 +7,8 @@ getLastRecordId('Quotes')
   .then(id => getDataFrom('Quotes', randomNumber(id)))
   .then(data => {
     component.setAttribute('text', data[0].fields.Quote);
-    return data[0].fields.Author[0];
-}).then(id => fetchFromId('Quotes', id))
-  .then(data => component.setAttribute('title', data.Name));
+    component.setAttribute('title', data[0].fields.Author);
+    // return data[0].fields.Author[0];
+})
+// .then(id => fetchFromId('Quotes', id))
+// .then(data => component.setAttribute('title', data.Name));

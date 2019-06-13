@@ -3,13 +3,16 @@
 :root {
   --orange-0: #fff9f1;
   --orange-10: #fdeac9;
-  --orange-40: #dd8d00;
+  --orange-20: #fbd799;
+  --orange-30: #f5b23d;
+  --orange-40: #eb9600;
   --orange-50: #cb8200;
+  --orange-60: #b27300;
+  --orange-70: #936000;
   --orange-80: #6e4800;
+  --orange-90: #442d00;
   --orange-100: #1a1100;
-  --white: rgba(255, 255, 255, 0.9)
 }
-
 @keyframes slidedown {
   from {
     background-position: 100% 35%;
@@ -54,7 +57,6 @@ body {
 .block {
   margin: 0.5rem;
   border-radius: 0.2rem;
-  overflow-y: scroll;
   background: white;
 }
 

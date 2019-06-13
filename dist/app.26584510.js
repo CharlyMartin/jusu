@@ -1139,12 +1139,9 @@ var component = document.querySelector('#quote > app-block');
   return (0, _client.getDataFrom)('Quotes', (0, _randomNumber.randomNumber)(id));
 }).then(function (data) {
   component.setAttribute('text', data[0].fields.Quote);
-  return data[0].fields.Author[0];
-}).then(function (id) {
-  return (0, _client.fetchFromId)('Quotes', id);
-}).then(function (data) {
-  return component.setAttribute('title', data.Name);
-});
+  component.setAttribute('title', data[0].fields.Author); // return data[0].fields.Author[0];
+}); // .then(id => fetchFromId('Quotes', id))
+// .then(data => component.setAttribute('title', data.Name));
 },{"../airtable/client.js":"javascript/airtable/client.js","../helpers/random-number.js":"javascript/helpers/random-number.js"}],"javascript/initialisers/init-principle.js":[function(require,module,exports) {
 "use strict";
 
